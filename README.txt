@@ -24,5 +24,6 @@ Step 3:
 	run turtle.py
 	pass output file from previous step in
 	choose repetition amount (how many fractal branches)
+	choose scale size (1 for default, and you will have it scaled by any other number passed in)
 ***********************
-MORE TO COME THIS IS PROTOTYPE 1
+MORE TO COME THIS IS PROTOTYPE 2

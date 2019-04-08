@@ -243,8 +243,6 @@ public:
     notes *p;
     int tog;
     p=first;
-    tog = calOut();
-    out<<tog<<endl;
     while(p!=NULL){
       out<<p->deg<<"--"<<p->leng<<"--&"<<endl;
       p = p->next;
@@ -253,25 +251,22 @@ public:
   int calOut(){
     double mod;
     double n;
+    double thrw;
     double stay;
+    double prev = 0;
     notes *p, *f;
     p = first;
     f = NULL;
     while(p!=NULL){
       n = p-> deg;
-      if (f == NULL){
-        stay +=n;
-      }
-      else if(p-> deg>f-> deg){
-        stay +=n;
-      }
-      else{
-        stay -=n;
-      }
+      thrw = n;
+      n-=prev;
       f = p;
       p = p->next;
+      stay+=prev;
+      prev = thrw;
     }
-    if(stay<0)stay*=-1;
+    cout<<stay<<endl;
     for(double i = 1.0; ; i++){
       mod = stay*i;
       if (fmod(mod,360) < 1 || (360-fmod(mod,360))<1){
